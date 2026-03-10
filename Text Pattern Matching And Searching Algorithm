@@ -1,0 +1,24 @@
+def locate(sub,main):
+  size_main=len(main)
+  size_sub=len(sub)
+  print("Given String:",main)
+  print("Search String",sub)
+  print("--------------------------")
+  found_any=0
+  index=0
+  while index<=size_main-size_sub:
+    k=0
+    while k<size_sub:
+      if main[index+k]!=sub[k]:
+        break 
+      k=k+1
+    if k==size_sub: # This check should happen after the inner while loop finishes
+      print("Substring exists at position:",index)
+      found_any=1
+    index=index+1 # This should be part of the outer while loop
+  if found_any==0:
+    print("Substring does not exist")
+
+full_text="AABAACAADAABAABA"
+search_text="AABA"
+locate(search_text,full_text)
