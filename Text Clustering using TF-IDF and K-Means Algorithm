@@ -1,0 +1,21 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+
+sentences = [
+    "puthon programming language",
+    "machine learning models",
+    "data science analysis",
+    'Football match today',
+    "cricket players practice"
+]
+vec = TfidfVectorizer()
+data = vec.fit_transform(sentences)
+k = KMeans(n_clusters=2, random_state=0, n_init=10) # Added random_state and n_init for reproducibility and to suppress a warning
+clusters = k.fit_predict(data)
+print("cluster Results:\n")
+for i in range(len(sentences)):
+  s = sentences[i]
+  c = clusters[i]
+  print("Sentence:",s)
+  print("Cluster:",c)
+  print()
