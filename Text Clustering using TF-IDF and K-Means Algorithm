@@ -5,7 +5,7 @@ sentences = [
     "puthon programming language",
     "machine learning models",
     "data science analysis",
-    'Football match today',
+    "Football match today",
     "cricket players practice"
 ]
 vec = TfidfVectorizer()
